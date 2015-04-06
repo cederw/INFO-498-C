@@ -99,7 +99,11 @@ public class TestPerson {
     assertEquals("", pce.getOldValue());
     assertEquals("012-34-5678", pce.getNewValue());
     */
-
+    ted.addPropertyChangeListener((evt) -> {
+      assertEquals("ssn", evt.getPropertyName());
+      assertEquals("", evt.getOldValue());
+      assertEquals("012-34-5678", evt.getNewValue());
+    } );
     // ============ YOUR CHANGES END HERE
     
     assertEquals(false, ted.getPropertyChangeFired());
